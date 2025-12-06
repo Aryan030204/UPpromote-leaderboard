@@ -6,6 +6,7 @@ const affiliateSchema = new mongoose.Schema(
     email: { type: String, required: true, lowercase: true, trim: true },
     first_name: { type: String, required: true, trim: true },
     last_name: { type: String, required: true, trim: true },
+    numberOfOrders: { type: Number, default: 0, min: 0 },
   },
   {
     timestamps: true,
