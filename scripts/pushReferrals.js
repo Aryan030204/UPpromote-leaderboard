@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 const WEBHOOK_URL =
-  process.env.WEBHOOK_URL || "http://localhost:8080/upromote/webhook";
+  process.env.WEBHOOK_URL || "https://uppromote-leaderboard.onrender.com/upromote/webhook";
 const INTERVAL_MS = Number(process.env.INTERVAL_MS) || 10000;
 const MIN_BATCH_SIZE = Number(process.env.MIN_BATCH_SIZE) || 2;
 const MAX_BATCH_SIZE = Number(process.env.MAX_BATCH_SIZE) || 5;

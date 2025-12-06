@@ -12,9 +12,14 @@ const PORT = process.env.PORT || 3000;
 const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || "*";
 const LEADERBOARD_LIMIT = 10;
 
-app.use(cors({
-    origin: "http://localhost:5173",
-}))
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://upromote-leaderboard.vercel.app",
+    ],
+  })
+);
 
 let leaderboardCache = [];
 

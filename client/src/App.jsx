@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import Leaderboard from "./components/Leaderboard";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8080";
+const API_BASE_URL =
+  import.meta.env.SERVER_URL || "https://uppromote-leaderboard.onrender.com";
 
 function App() {
   const [leaderboard, setLeaderboard] = useState([]);
