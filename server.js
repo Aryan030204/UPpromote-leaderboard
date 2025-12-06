@@ -7,7 +7,7 @@ app.use(express.json());
 require("dotenv").config();
 
 app.post("/upromote/webhook", async (req, res) => {
-  console.log("Webhook received:", req);
+  console.log("Webhook received:", req.body);
 
   // TODO: validate signature (if UpPromote sends one)
   // TODO: save to DB
