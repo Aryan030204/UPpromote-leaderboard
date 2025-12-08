@@ -56,14 +56,21 @@ function App() {
       setError("Real-time connection lost. Retrying...");
     };
 
+    const handleConnect = () => {
+      console.log("Socket connected");
+      setError(null);
+    };
+
     socket.on("leaderboard:init", handleInit);
     socket.on("leaderboard:update", handleUpdate);
     socket.on("connect_error", handleError);
+    socket.on("connect", handleConnect);
 
     return () => {
       socket.off("leaderboard:init", handleInit);
       socket.off("leaderboard:update", handleUpdate);
       socket.off("connect_error", handleError);
+      socket.off("connect", handleConnect);
       socket.disconnect();
     };
   }, []);
