@@ -133,6 +133,13 @@ app.post("/upromote/webhook", async (req, res) => {
       last_name,
     };
 
+    const existingAffiliate = await Affiliate.findOne({ email });
+    if (existingAffiliate && existingAffiliate.id !== String(id)) {
+      return res.status(400).json({
+        message: "Affiliate with this email already exists",
+      });
+    }
+
     await Referral.create({
       order_id: String(order_id),
       order_number: String(order_number),
