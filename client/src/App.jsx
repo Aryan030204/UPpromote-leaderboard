@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import Leaderboard from "./components/Leaderboard";
+import FAQ from "./components/FAQ";
+import Footer from "./components/Footer";
 
 const API_BASE_URL =
   import.meta.env.SERVER_URL || "https://uppromote-leaderboard.onrender.com";
@@ -76,9 +78,9 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8 px-4">
+    <div className="min-h-screen bg-gray-100 py-6 md:py-8 px-2 md:px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">
+        <h1 className="text-2xl md:text-4xl font-bold text-center mb-6 md:mb-8 text-gray-800">
           Affiliate Leaderboard
         </h1>
         {error && (
@@ -93,6 +95,8 @@ function App() {
         ) : (
           <Leaderboard data={leaderboard} />
         )}
+        <FAQ />
+        <Footer />
       </div>
     </div>
   );

@@ -33,9 +33,9 @@ export default function Leaderboard({ data }) {
       <table className="w-full border-collapse">
         <thead>
           <tr className="bg-[#8B3A3A] text-white">
-            <th className="px-6 py-4 text-left font-bold text-lg">RANK</th>
-            <th className="px-6 py-4 text-left font-bold text-lg">AFFILIATE NAME</th>
-            <th className="px-6 py-4 text-left font-bold text-lg">ORDERS</th>
+            <th className="px-4 md:px-6 py-3 md:py-4 text-left font-bold text-base md:text-lg">RANK</th>
+            <th className="px-4 md:px-6 py-3 md:py-4 text-left font-bold text-base md:text-lg">AFFILIATE NAME</th>
+            <th className="px-4 md:px-6 py-3 md:py-4 text-left font-bold text-base md:text-lg">ORDERS</th>
           </tr>
         </thead>
         <tbody>
@@ -50,16 +50,16 @@ export default function Leaderboard({ data }) {
                 key={affiliate._id || affiliate.id}
                 className={`border-b border-gray-200 hover:${bgDarkColor} transition-colors`}
               >
-                <td className={`px-6 py-4 font-bold text-gray-800 ${bgColor}`}>
-                  <div className="flex items-center gap-3">
-                    {medal && <span className="text-2xl">{medal}</span>}
-                    <span className="text-lg">{rank}</span>
+                <td className={`px-4 md:px-6 py-3 md:py-4 font-bold text-gray-800 ${bgColor}`}>
+                  <div className="flex items-center gap-2 md:gap-3">
+                    {medal && <span className="text-xl md:text-2xl">{medal}</span>}
+                    <span className="text-base md:text-lg">{rank}</span>
                   </div>
                 </td>
-                <td className={`px-6 py-4 font-semibold text-gray-800 ${bgColor}`}>
+                <td className={`px-4 md:px-6 py-3 md:py-4 font-semibold text-gray-800 ${bgColor} text-sm md:text-base`}>
                   {affiliate.first_name} {affiliate.last_name}
                 </td>
-                <td className={`px-6 py-4 font-bold text-gray-800 ${bgColor}`}>
+                <td className={`px-4 md:px-6 py-3 md:py-4 font-bold text-gray-800 ${bgColor} text-base md:text-lg`}>
                   {affiliate.numberOfOrders}
                 </td>
               </tr>
