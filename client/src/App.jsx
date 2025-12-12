@@ -78,7 +78,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100 py-6 md:py-8 px-2 md:px-4">
+    <div className="min-h-screen bg-white py-6 md:py-8 px-2 md:px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-2xl md:text-4xl font-bold text-center mb-6 md:mb-8 text-gray-800">
           Affiliate Leaderboard
